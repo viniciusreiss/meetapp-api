@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: meetapp
+      POSTGRES_USER: meetapp
+      POSTGRES_DB: meetapp
+volumes:
+  pgdata:
