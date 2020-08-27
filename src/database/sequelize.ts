@@ -1,4 +1,5 @@
 import { Sequelize } from 'sequelize'
+import UserModel from '@database/models/User'
 
 const sequelize = new Sequelize({
   dialect: 'postgres',
@@ -13,12 +14,13 @@ const sequelize = new Sequelize({
   }
 })
 
-const models = []
+const models = [UserModel]
 
 models.map(model => model.initModel(sequelize))
 
 export const isDbConnected = async () => {
   await sequelize.authenticate()
+  console.log('got connection with data base')
 }
 
 export default sequelize
