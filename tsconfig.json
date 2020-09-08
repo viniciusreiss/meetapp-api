@@ -17,7 +17,8 @@
       "@controllers/*": ["src/controllers/*"],
       "@routes/*": ["src/routes/*"],
       "@database/*": ["src/database/*"],
-      "@domain/*": ["src/domain/*"]
+      "@domain/*": ["src/domain/*"],
+      "@middlewares/*": ["src/middlewares/*"]
     }
   },
   "include": ["**/*.ts"],
