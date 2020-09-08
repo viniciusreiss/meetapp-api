@@ -1,10 +1,11 @@
 import { Router } from 'express'
 import { createUser } from '@controllers/UserController'
+import { createSession } from '@controllers/SessionController'
+import { authentication } from '@middlewares/auth'
 
-const routes = Router({
-  mergeParams: true
-})
+const routes = Router()
 
-routes.post('/users', createUser)
+routes.post('/session', createSession)
+routes.post('/users', authentication, createUser)
 
 export default routes
